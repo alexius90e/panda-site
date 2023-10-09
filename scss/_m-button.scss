@@ -1,0 +1,23 @@
+.button {
+  display: block;
+  width: max-content;
+  padding: 15px 51px;
+  color: $white;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  border-radius: 100px;
+  background-color: $green;
+  background-position: left 17px center;
+  background-repeat: no-repeat;
+  transition: $baseTransition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #72934C;
+  }
+
+  &:active {
+    background-color: #72934C;
+  }
+}

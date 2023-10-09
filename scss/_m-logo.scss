@@ -1,0 +1,11 @@
+.logo {
+  &__image {
+    height: 83px;
+    width: auto;
+    object-fit: contain;
+
+    @include tablet {
+      height: 43px;
+    }
+  }
+}

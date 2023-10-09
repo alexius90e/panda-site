@@ -1,0 +1,28 @@
+.navigation {
+  margin: 0 0 16px;
+
+  & .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 46px;
+
+    @include tablet {
+      gap: 8px 16px;
+    }
+  }
+
+  &__link {
+    color: $black;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    transition: $baseTransition;
+
+    &:hover {
+      color: #6183e4;
+    }
+  }
+}
