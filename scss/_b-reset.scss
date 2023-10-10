@@ -2,7 +2,9 @@
 
 @font-face {
   font-family: 'Bob';
-  src: url(../fonts/BoB.ttf);
+  src: url('../fonts/bob-webfont.woff2') format('woff2'), url('../fonts/bob-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
