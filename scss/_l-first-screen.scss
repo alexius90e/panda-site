@@ -1,0 +1,156 @@
+.first-screen {
+  padding: 121px 0 100px;
+  overflow: hidden;
+
+  @include laptop {
+    padding: 50px 0;
+  }
+
+  @include mobile {
+    padding: 20px 0 50px;
+  }
+
+  & .container {
+    position: relative;
+
+    @include mobile {
+      padding-top: 237px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    max-width: 872px;
+    margin: 0 0 48px;
+    z-index: 1;
+    color: $black;
+    font-size: 74px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+
+    @include desktop {
+      max-width: 640px;
+      font-size: 56px;
+    }
+
+    @include laptop {
+      max-width: 462px;
+      font-size: 40px;
+    }
+
+    @include mobile {
+      max-width: none;
+      width: 100%;
+      margin: 0 0 50px;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    & > span {
+      color: $greyBlueStrong;
+    }
+  }
+
+  &__description {
+    position: relative;
+    width: fit-content;
+    margin: 0 0 65px;
+    z-index: 1;
+    color: $black;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    @include laptop {
+      max-width: 365px;
+      margin: 0 0 73px;
+      font-size: 32px;
+    }
+
+    @include mobile {
+      max-width: none;
+      margin: 0 0 30px;
+      width: 100%;
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 100%;
+      display: block;
+      width: 27px;
+      height: 24px;
+      background-image: url(../assets/leaves.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 27px;
+
+      @include laptop {
+        top: 36px;
+        left: 102px;
+      }
+
+      @include mobile {
+        top: -10px;
+        left: calc(50% + 127px);
+      }
+    }
+
+    &_form {
+      margin: 0 0 21px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+
+      @include mobile {
+        margin: 0 0 30px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: -63px;
+    right: -81px;
+    z-index: 0;
+    width: fit-content;
+
+    @include laptop {
+      top: 0;
+      left: 55%;
+      right: auto;
+    }
+
+    @include mobile {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    & > img {
+      width: 575px;
+      height: auto;
+
+      @include desktop {
+        width: 480px;
+      }
+
+      @include laptop {
+        width: 330px;
+      }
+
+      @include mobile {
+        width: 236px;
+      }
+    }
+  }
+}
