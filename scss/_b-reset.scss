@@ -18,6 +18,7 @@ body {
   position: relative;
   margin: 0;
   background-color: $white;
+  overflow-y: scroll;
 
   &.fixed {
     @include tablet {

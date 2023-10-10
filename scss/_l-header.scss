@@ -1,23 +1,42 @@
 .header {
-  padding: 24px 0;
+  padding: 21px 0 24px;
   background: $greyLight;
   box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.06);
+
+  @include laptop {
+    padding: 21px 0 22px;
+  }
 
   & .container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 16px;
   }
 
   &__nav {
     display: flex;
     align-items: center;
+    margin-left: -34px;
     gap: 40px;
+
+    @include desktop {
+      margin-left: 0;
+      gap: 16px;
+    }
+
+    @include laptop {
+      display: none;
+    }
 
     &-link {
       color: $black;
       font-size: 16px;
       font-weight: 350;
+
+      @include desktop {
+        flex: 1 1 auto;
+      }
 
       &:hover {
         color: $pink;
@@ -34,10 +53,62 @@
     align-items: center;
     gap: 8px;
 
+    @include mobile {
+      display: none;
+    }
+
     &-phone {
+      padding-left: 35px;
       color: $black;
       font-size: 22px;
       font-weight: 500;
+      background-image: url(../assets/icons/phone.svg);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 27px;
+
+      @include laptop {
+        padding: 6px 0;
+        padding-left: 35px;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  & .button {
+    @include laptop {
+      padding: 15px 45px;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 500;
+    }
+  }
+
+  &__burger-btn {
+    flex: 0 0 auto;
+    display: none;
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    border: none;
+    border-radius: 50px;
+    background-color: $green;
+    background-image: url(../assets/icons/menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 17px;
+
+    @include tablet {
+      display: inline-block;
+    }
+
+    &:hover {
+      background-color: #72934c;
+    }
+
+    &:active {
+      background-color: #72934c;
     }
   }
 }
