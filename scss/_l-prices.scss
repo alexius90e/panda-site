@@ -1,3 +1,195 @@
 .prices {
-  
+  padding: 75px 0;
+
+  &__title {
+    margin: 0 0 43px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+  }
+
+  &__item {
+    border: 2px solid $white;
+    border-radius: 25px;
+    background: $white;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
+    transition: $baseTransition;
+
+    &.active {
+      border: 2px solid $greyBlueStrong;
+      background: linear-gradient(180deg, #f5f5f5 0%, #99b1b8 100%);
+    }
+
+    &-header {
+      position: relative;
+      padding: 35px 120px 35px 58px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 25px;
+        height: 100%;
+        border-radius: 25px 0 0 25px;
+        background-color: $greyBlueStrong;
+        transition: $baseTransition;
+      }
+    }
+
+    &.active &-header {
+      &::before {
+        display: none;
+      }
+    }
+
+    &-address {
+      margin: 0;
+      color: $greyBlueStrong;
+      font-family: 'BoB', sans-serif;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+      transition: $baseTransition;
+    }
+
+    &.active &-address {
+      color: $green;
+    }
+
+    &-toggler {
+      position: absolute;
+      top: 35px;
+      right: 47px;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50px;
+      background-image: url(../assets/icons/icon-close.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: $baseTransition;
+      cursor: pointer;
+    }
+
+    &.active &-toggler {
+      background-image: url(../assets/icons/icon-open.svg);
+    }
+
+    &-body {
+      max-height: 0px;
+      padding: 0 39px;
+      box-sizing: content-box;
+      overflow: hidden;
+      transition: $baseTransition;
+    }
+
+    &.active &-body {
+      max-height: none;
+      padding: 20px 39px 42px;
+    }
+
+    &-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px 60px;
+    }
+
+    &-card {
+      flex: 0 1 calc(100% / 3 - 60px / 3 * 2);
+      display: flex;
+      flex-direction: column;
+      padding: 40px 45px;
+      box-sizing: border-box;
+      border-radius: 25px;
+      background-color: $white;
+
+      &-title {
+        margin: 0 0 24px;
+        color: $green;
+        text-align: center;
+        font-family: 'BoB', sans-serif;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+
+      &-time {
+        margin: 0 0 18px;
+        padding: 0 0 18px;
+        border-bottom: 3px solid $green;
+        color: $green;
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      &-subtitle {
+        margin: 0 0 20px;
+        color: $green;
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      &-services {
+        flex: 1 0 auto;
+        margin: 0 0 64px;
+        padding: 0;
+
+        & > li {
+          margin: 0 0 4px;
+          padding-left: 17px;
+          color: $black;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          list-style-type: none;
+          background: url(../assets/icons/check.svg) no-repeat left center;
+          background-size: 13px;
+        }
+      }
+
+      &-price {
+        margin: 0 0 21px;
+        color: $green;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-align: center;
+      }
+
+      &-buttons {
+        display: flex;
+        justify-content: center;
+
+        & .button {
+          padding: 13px 34px;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
+      }
+    }
+
+    &-text {
+    }
+  }
 }
