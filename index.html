@@ -82,7 +82,7 @@
         </div>
       </section>
 
-      <section class="advantages">
+      <section class="advantages" id="advantages">
         <div class="container">
           <h2 class="advantages__title">Почему нас выбирают</h2>
 
@@ -138,7 +138,8 @@
               </figure>
               <h3 class="advantages__item-title">Сбалансированное питание</h3>
               <p class="advantages__item-text">
-                Готовим на собственной кухне из натуральных продуктов. Вкусное и разнообразное меню с учётом индивидуальных особенностей детей.
+                Готовим на собственной кухне из натуральных продуктов. Вкусное и разнообразное меню
+                с учётом индивидуальных особенностей детей.
               </p>
             </article>
 
@@ -154,6 +155,51 @@
             </article>
           </div>
         </div>
+      </section>
+
+      <section class="excursion">
+        <div class="container">
+          <h2 class="excursion__title">Запишитесь к нам на экскурсию</h2>
+
+          <p class="excursion__description">
+            Мы покажем наши центры, ответим на все вопросы, проведём мини-презентацию
+          </p>
+
+          <form class="contact-form">
+            <fieldset class="contact-form__main">
+              <input
+                class="contact-form__phone"
+                type="text"
+                placeholder="+ 995  _  _  _   _  _  _   _  _  _"
+                name="phone"
+                required
+              />
+
+              <button class="button contact-form__submit">Хочу прийти на экскурсию</button>
+            </fieldset>
+
+            <fieldset class="contact-form__agreement">
+              <label class="contact-form__agreement-label">
+                <input
+                  class="contact-form__agreement-input"
+                  type="checkbox"
+                  name="agreement"
+                  required
+                />
+                <span class="contact-form__agreement-text">
+                  Нажимая на кнопку, вы даете согласие на обработку
+                  <a href="./">персональных данных</a> и соглашаетесь c
+                  <a href="./">политикой конфиденциальности</a>.
+                </span>
+                <span class="contact-form__agreement-checkmark"></span>
+              </label>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="excursion__bg-item excursion__bg-item_first"></div>
+        <div class="excursion__bg-item excursion__bg-item_second"></div>
+        <div class="excursion__bg-item excursion__bg-item_third"></div>
       </section>
     </main>
 

@@ -165,6 +165,9 @@ ul {
           box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
   outline-color: rgba(137, 167, 103, 0.15);
 }
+.contact-form__phone:focus-visible {
+  outline: none;
+}
 @media (max-width: 576px) {
   .contact-form__phone {
     max-width: 251px;
@@ -175,7 +178,7 @@ ul {
 .contact-form__submit {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -1px;
   padding: 18px 44px;
 }
 @media (max-width: 576px) {
@@ -250,9 +253,6 @@ ul {
   -webkit-transform: translateX(-50%) translateY(-50%);
       -ms-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
-}
-.contact-form__agreement:hover .contact-form__agreement-input ~ .contact-form__agreement-checkmark {
-  background-color: #f5f5f5;
 }
 .contact-form__agreement .contact-form__agreement-input:checked ~ .contact-form__agreement-checkmark:after {
   display: block;
@@ -582,7 +582,7 @@ ul {
 }
 
 .advantages {
-  padding: 0 0 100px;
+  padding: 0 0 94px;
   background-image: url(../assets/bg/advantages-bg.svg);
   background-repeat: no-repeat;
   background-position: top 47px left 169px;
@@ -717,6 +717,185 @@ ul {
   .advantages__item-text {
     font-size: 14px;
   }
+}
+
+.excursion {
+  position: relative;
+  padding: 157px 0 103px;
+  background-image: url(../assets/bg/excursion-bg.svg);
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 1920px auto;
+}
+@media (max-width: 768px) {
+  .excursion {
+    padding: 91px 0 93px;
+  }
+}
+@media (max-width: 576px) {
+  .excursion {
+    padding: 58px 0 48px;
+  }
+}
+.excursion__bg-item {
+  position: absolute;
+  background-image: url(../assets/bg/excursion-bg-item.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.3;
+}
+.excursion__bg-item_first {
+  top: 206px;
+  left: 173px;
+  width: 247px;
+  height: 184px;
+  -webkit-transform: rotate(-137deg);
+      -ms-transform: rotate(-137deg);
+          transform: rotate(-137deg);
+}
+@media (max-width: 768px) {
+  .excursion__bg-item_first {
+    top: 70px;
+    left: 0px;
+    width: 147px;
+    height: 110px;
+  }
+}
+@media (max-width: 576px) {
+  .excursion__bg-item_first {
+    width: 38px;
+    height: 29px;
+  }
+}
+.excursion__bg-item_second {
+  top: 137px;
+  right: 288px;
+  width: 85px;
+  height: 63px;
+}
+@media (max-width: 768px) {
+  .excursion__bg-item_second {
+    width: 71px;
+    height: 54px;
+    top: 102px;
+    right: 5px;
+  }
+}
+@media (max-width: 576px) {
+  .excursion__bg-item_second {
+    width: 30px;
+    height: 19px;
+    top: 166px;
+    right: 32px;
+  }
+}
+.excursion__bg-item_third {
+  bottom: 91px;
+  right: 487px;
+  width: 80px;
+  height: 48px;
+}
+@media (max-width: 768px) {
+  .excursion__bg-item_third {
+    bottom: 48px;
+    right: 88px;
+    width: 67px;
+    height: 42px;
+  }
+}
+@media (max-width: 576px) {
+  .excursion__bg-item_third {
+    bottom: 24px;
+    right: 43px;
+    width: 41.161px;
+    height: 31.436px;
+  }
+}
+.excursion__title {
+  margin: 0 0 31px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 768px) {
+  .excursion__title {
+    margin: 0 0 50px;
+    font-size: 32px;
+  }
+}
+@media (max-width: 576px) {
+  .excursion__title {
+    margin: 0 0 38px;
+    font-size: 20px;
+  }
+}
+.excursion__description {
+  margin: 0 0 74px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 768px) {
+  .excursion__description {
+    margin: 0 0 50px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .excursion__description {
+    margin: 0 0 38px;
+    font-size: 14px;
+  }
+}
+.excursion .contact-form {
+  margin: 0 auto;
+}
+@media (max-width: 576px) {
+  .excursion .contact-form {
+    padding: 0 15px;
+  }
+}
+.excursion .contact-form__submit {
+  max-width: 220px;
+  height: 100%;
+  width: 100%;
+  padding: 8px 15px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background-color: #d39f9a;
+}
+@media (max-width: 576px) {
+  .excursion .contact-form__submit {
+    max-height: 56px;
+  }
+}
+.excursion .contact-form__agreement-text {
+  color: #ffffff;
+}
+.excursion .contact-form__agreement-text a {
+  color: #4e4e4e;
+}
+.excursion .contact-form__agreement-checkmark {
+  border: 4px solid #ffffff;
+  background-color: #89a767;
+}
+.excursion .contact-form__agreement-checkmark:after {
+  background-color: #ffffff;
+}
+.excursion .contact-form__agreement:hover .excursion .contact-form__agreement-input ~ .excursion .contact-form__agreement-checkmark {
+  background-color: #779358 !important;
+}
+.excursion .contact-form__agreement .excursion .contact-form__agreement-input:checked ~ .excursion .contact-form__agreement-checkmark:after {
+  display: block;
 }
 
 .footer .container {
