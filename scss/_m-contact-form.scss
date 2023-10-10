@@ -1,0 +1,124 @@
+.contact-form {
+  max-width: 542px;
+
+  &__main {
+    position: relative;
+    padding: 0;
+    margin: 0 0 29px;
+    border: none;
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0 44px;
+    }
+  }
+
+  &__phone {
+    display: block;
+    width: 100%;
+    padding: 19px 20px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 48px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background-color: $white;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
+    outline-color: rgba($color: $green, $alpha: 0.15);
+
+    @include mobile {
+      max-width: 251px;
+      padding: 18px 27px 56px;
+      font-size: 16px;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 18px 44px;
+
+    @include mobile {
+      top: 51px;
+      right: auto;
+      left: 50%;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__agreement {
+    position: relative;
+    padding: 0 0 0 30px;
+    margin: 0;
+    border: none;
+
+    &-label {
+      cursor: pointer;
+    }
+
+    &-input {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &-text {
+      display: inline-block;
+      color: $black;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 350;
+      line-height: normal;
+      user-select: none;
+
+      & a {
+        color: $green;
+      }
+    }
+
+    &-checkmark {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 12px;
+      width: 12px;
+      aspect-ratio: 1;
+      border: 4px solid $green;
+      border-radius: 50px;
+      background-color: $white;
+      transform: translateY(-50%);
+
+      &:after {
+        content: '';
+        position: relative;
+        top: 50%;
+        left: 50%;
+        display: none;
+        width: 8px;
+        height: 8px;
+        border-radius: 10px;
+        background-color: $green;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+
+    &:hover &-input ~ &-checkmark {
+      background-color: $greyLight;
+    }
+
+    & &-input:checked ~ &-checkmark:after {
+      display: block;
+    }
+  }
+}

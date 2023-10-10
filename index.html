@@ -45,23 +45,42 @@
 
           <p class="first-screen__description_form">Оставьте телефон и мы перезвоним</p>
 
-          <form>
-            <fieldset>
-              <input type="text" placeholder="+ 995  _  _  _   _  _  _   _  _  _" />
-              
-              <button class="button">Хочу к вам в центр</button>
+          <form class="contact-form">
+            <fieldset class="contact-form__main">
+              <input
+                class="contact-form__phone"
+                type="text"
+                placeholder="+ 995  _  _  _   _  _  _   _  _  _"
+                name="phone"
+                required
+              />
+
+              <button class="button contact-form__submit">Хочу к вам в центр</button>
             </fieldset>
 
-            <fieldset>
-              <label>
-                <span>
-                  Нажимая на кнопку, вы даете согласие на обработку персональных данных и
-                  соглашаетесь c политикой конфиденциальности.
+            <fieldset class="contact-form__agreement">
+              <label class="contact-form__agreement-label">
+                <input
+                  class="contact-form__agreement-input"
+                  type="checkbox"
+                  name="agreement"
+                  required
+                />
+                <span class="contact-form__agreement-text">
+                  Нажимая на кнопку, вы даете согласие на обработку <a href="./">персональных данных</a> и
+                  соглашаетесь c <a href="./">политикой конфиденциальности</a>.
                 </span>
-                <input type="checkbox" />
+                <span class="contact-form__agreement-checkmark"></span>
               </label>
             </fieldset>
           </form>
+
+          <div class="first-screen__scroll">
+            <a href="#advantages" class="first-screen__scroll-button"></a>
+          </div>
+          
+
+          
         </div>
       </section>
     </main>
