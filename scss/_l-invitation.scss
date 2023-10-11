@@ -1,3 +1,72 @@
 .invitation {
-  display: none;
+  position: relative;
+  padding: 144px 0 112px;
+  background-image: url(../assets/bg/invitation-bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  @include tablet {
+    padding: 95px 0;
+    background-size: 1000px 100%;
+  }
+
+  @include mobile {
+    padding: 70px 0;
+    background-position: left -300px center;
+    background-size: 1200px 100%;
+  }
+
+  &__title {
+    margin: 0 auto 35px;
+    max-width: 1024px;
+    color: $white;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+
+    @include tablet {
+      max-width: 513px;
+      margin: 0 auto 40px;
+      font-size: 32px;
+    }
+
+    @include mobile {
+      margin: 0 auto 35px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+
+  &__description {
+    margin: 0 auto 34px;
+    color: $white;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+
+    @include tablet {
+      max-width: 513px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  & .contact-form {
+    margin: 0 auto;
+
+    &__agreement-text {
+      color: $white;
+
+      & > a {
+        color: $green;
+      }
+    }
+  }
 }

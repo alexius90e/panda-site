@@ -722,10 +722,15 @@ ul {
 .excursion {
   position: relative;
   padding: 157px 0 103px;
-  background-image: url(../assets/bg/excursion-bg.svg);
-  background-repeat: repeat-x;
+  background-image: url(../assets/bg/excursion-bg.png);
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: 1920px auto;
+  background-size: 100% 100%;
+}
+@media (max-width: 1200px) {
+  .excursion {
+    background-size: 1920px 100%;
+  }
 }
 @media (max-width: 768px) {
   .excursion {
@@ -735,6 +740,8 @@ ul {
 @media (max-width: 576px) {
   .excursion {
     padding: 58px 0 48px;
+    background-position: left -500px center;
+    background-size: 1200px 100%;
   }
 }
 .excursion__bg-item {
@@ -1283,7 +1290,77 @@ ul {
 }
 
 .invitation {
-  display: none;
+  position: relative;
+  padding: 144px 0 112px;
+  background-image: url(../assets/bg/invitation-bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+@media (max-width: 768px) {
+  .invitation {
+    padding: 95px 0;
+    background-size: 1000px 100%;
+  }
+}
+@media (max-width: 576px) {
+  .invitation {
+    padding: 70px 0;
+    background-position: left -300px center;
+    background-size: 1200px 100%;
+  }
+}
+.invitation__title {
+  margin: 0 auto 35px;
+  max-width: 1024px;
+  color: #ffffff;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .invitation__title {
+    max-width: 513px;
+    margin: 0 auto 40px;
+    font-size: 32px;
+  }
+}
+@media (max-width: 576px) {
+  .invitation__title {
+    margin: 0 auto 35px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
+.invitation__description {
+  margin: 0 auto 34px;
+  color: #ffffff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .invitation__description {
+    max-width: 513px;
+  }
+}
+@media (max-width: 576px) {
+  .invitation__description {
+    font-size: 16px;
+  }
+}
+.invitation .contact-form {
+  margin: 0 auto;
+}
+.invitation .contact-form__agreement-text {
+  color: #ffffff;
+}
+.invitation .contact-form__agreement-text > a {
+  color: #89a767;
 }
 
 .faq {

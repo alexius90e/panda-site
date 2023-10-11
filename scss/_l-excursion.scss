@@ -1,10 +1,14 @@
 .excursion {
   position: relative;
   padding: 157px 0 103px;
-  background-image: url(../assets/bg/excursion-bg.svg);
-  background-repeat: repeat-x;
+  background-image: url(../assets/bg/excursion-bg.png);
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: 1920px auto;
+  background-size: 100% 100%;
+
+  @include desktop {
+    background-size: 1920px 100%;
+  }
 
   @include tablet {
     padding: 91px 0 93px;
@@ -12,6 +16,8 @@
 
   @include mobile {
     padding: 58px 0 48px;
+    background-position: left -500px center;
+    background-size: 1200px 100%;
   }
 
   &__bg-item {
@@ -24,7 +30,7 @@
 
     &_first {
       top: 206px;
-    left: 173px;
+      left: 173px;
       width: 247px;
       height: 184px;
       transform: rotate(-137deg);
