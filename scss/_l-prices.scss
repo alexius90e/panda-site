@@ -2,20 +2,65 @@
   padding: 75px 0;
 
   &__title {
+    position: relative;
     margin: 0 0 43px;
     font-size: 40px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-align: center;
+
+    @include tablet {
+      font-size: 32px;
+    }
+
+    @include mobile {
+      margin: 0 0 25px;
+      font-size: 20px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -120%;
+      left: 0;
+      z-index: 5;
+      width: 168px;
+      height: 168px;
+      background-image: url(../assets/fairy-panda.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 168px;
+
+      @include tablet {
+        top: -90%;
+        width: 130px;
+        height: 130px;
+        background-size: 130px;
+      }
+
+      @include mobile {
+        top: -30%;
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+      }
+    }
   }
 
   &__item {
-    border: 2px solid $white;
+    max-width: 1140px;
+    margin: 0 auto 40px;
+    border: 2px solid rgba($color: $white, $alpha: 0);
     border-radius: 25px;
+    box-sizing: border-box;
     background: $white;
     box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
     transition: $baseTransition;
+
+    &:last-child {
+      margin: 0 auto;
+    }
 
     &.active {
       border: 2px solid $greyBlueStrong;
@@ -26,17 +71,33 @@
       position: relative;
       padding: 35px 120px 35px 58px;
 
+      @include tablet {
+        padding: 26px 100px 26px 40px;
+      }
+
+      @include mobile {
+        padding: 30px 64px 30px 25px;
+      }
+
       &::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
+        top: -2px;
+        left: -2px;
         display: block;
         width: 25px;
-        height: 100%;
+        height: calc(100% + 4px);
         border-radius: 25px 0 0 25px;
         background-color: $greyBlueStrong;
         transition: $baseTransition;
+
+        @include tablet {
+          width: 22px;
+        }
+
+        @include mobile {
+          width: 18px;
+        }
       }
     }
 
@@ -56,6 +117,14 @@
       line-height: normal;
       text-transform: uppercase;
       transition: $baseTransition;
+
+      @include tablet {
+        font-size: 23px;
+      }
+
+      @include mobile {
+        font-size: 18px;
+      }
     }
 
     &.active &-address {
@@ -75,8 +144,22 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      transition: $baseTransition;
+      transition: background ease-in-out 0.3s;
       cursor: pointer;
+
+      @include tablet {
+        top: 26px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+
+      @include mobile {
+        top: 30px;
+        right: 16px;
+        width: 30px;
+        height: 30px;
+      }
     }
 
     &.active &-toggler {
@@ -89,11 +172,19 @@
       box-sizing: content-box;
       overflow: hidden;
       transition: $baseTransition;
+
+      @include tablet {
+        padding: 0 8px;
+      }
     }
 
     &.active &-body {
       max-height: none;
       padding: 20px 39px 42px;
+
+      @include tablet {
+        padding: 20px 8px 42px;
+      }
     }
 
     &-cards {
@@ -101,6 +192,11 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 40px 60px;
+      margin: 0 0 40px;
+
+      @include mobile {
+        gap: 30px 60px;
+      }
     }
 
     &-card {
@@ -112,6 +208,37 @@
       border-radius: 25px;
       background-color: $white;
 
+      @include laptop {
+        flex: 0 1 calc((100% - 60px) / 2);
+      }
+
+      @include mobile {
+        flex: 1 1 100%;
+      }
+
+      &_hot {
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: -28px;
+          left: -22px;
+          display: block;
+          width: 60px;
+          height: 53px;
+          background-image: url(../assets/leaves.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+          transform: rotate(-120deg);
+
+          @include tablet {
+            left: 0px;
+          }
+        }
+      }
+
       &-title {
         margin: 0 0 24px;
         color: $green;
@@ -122,6 +249,10 @@
         font-weight: 400;
         line-height: normal;
         text-transform: uppercase;
+
+        @include tablet {
+          font-size: 18px;
+        }
       }
 
       &-time {
@@ -134,6 +265,10 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+
+        @include tablet {
+          font-size: 18px;
+        }
       }
 
       &-subtitle {
@@ -144,6 +279,10 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+
+        @include tablet {
+          font-size: 18px;
+        }
       }
 
       &-services {
@@ -162,6 +301,10 @@
           list-style-type: none;
           background: url(../assets/icons/check.svg) no-repeat left center;
           background-size: 13px;
+
+          @include tablet {
+            font-size: 14px;
+          }
         }
       }
 
@@ -190,6 +333,15 @@
     }
 
     &-text {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-align: center;
+
+      @include tablet {
+        font-size: 14px;
+      }
     }
   }
 }

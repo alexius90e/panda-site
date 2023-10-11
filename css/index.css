@@ -902,6 +902,7 @@ ul {
   padding: 75px 0;
 }
 .prices__title {
+  position: relative;
   margin: 0 0 43px;
   font-size: 40px;
   font-style: normal;
@@ -909,14 +910,61 @@ ul {
   line-height: normal;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .prices__title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 576px) {
+  .prices__title {
+    margin: 0 0 25px;
+    font-size: 20px;
+  }
+}
+.prices__title::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: 0;
+  z-index: 5;
+  width: 168px;
+  height: 168px;
+  background-image: url(../assets/fairy-panda.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 168px;
+}
+@media (max-width: 768px) {
+  .prices__title::before {
+    top: -90%;
+    width: 130px;
+    height: 130px;
+    background-size: 130px;
+  }
+}
+@media (max-width: 576px) {
+  .prices__title::before {
+    top: -30%;
+    width: 60px;
+    height: 60px;
+    background-size: 60px;
+  }
+}
 .prices__item {
-  border: 2px solid #ffffff;
+  max-width: 1140px;
+  margin: 0 auto 40px;
+  border: 2px solid rgba(255, 255, 255, 0);
   border-radius: 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background: #ffffff;
   -webkit-box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
   -webkit-transition: all ease-in-out 0.15s;
   transition: all ease-in-out 0.15s;
+}
+.prices__item:last-child {
+  margin: 0 auto;
 }
 .prices__item.active {
   border: 2px solid #99b1b8;
@@ -927,18 +975,38 @@ ul {
   position: relative;
   padding: 35px 120px 35px 58px;
 }
+@media (max-width: 768px) {
+  .prices__item-header {
+    padding: 26px 100px 26px 40px;
+  }
+}
+@media (max-width: 576px) {
+  .prices__item-header {
+    padding: 30px 64px 30px 25px;
+  }
+}
 .prices__item-header::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -2px;
+  left: -2px;
   display: block;
   width: 25px;
-  height: 100%;
+  height: calc(100% + 4px);
   border-radius: 25px 0 0 25px;
   background-color: #99b1b8;
   -webkit-transition: all ease-in-out 0.15s;
   transition: all ease-in-out 0.15s;
+}
+@media (max-width: 768px) {
+  .prices__item-header::before {
+    width: 22px;
+  }
+}
+@media (max-width: 576px) {
+  .prices__item-header::before {
+    width: 18px;
+  }
 }
 .prices__item.active .prices__item-header::before {
   display: none;
@@ -954,6 +1022,16 @@ ul {
   text-transform: uppercase;
   -webkit-transition: all ease-in-out 0.15s;
   transition: all ease-in-out 0.15s;
+}
+@media (max-width: 768px) {
+  .prices__item-address {
+    font-size: 23px;
+  }
+}
+@media (max-width: 576px) {
+  .prices__item-address {
+    font-size: 18px;
+  }
 }
 .prices__item.active .prices__item-address {
   color: #89a767;
@@ -971,9 +1049,25 @@ ul {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  -webkit-transition: all ease-in-out 0.15s;
-  transition: all ease-in-out 0.15s;
+  -webkit-transition: background ease-in-out 0.3s;
+  transition: background ease-in-out 0.3s;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .prices__item-toggler {
+    top: 26px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .prices__item-toggler {
+    top: 30px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+  }
 }
 .prices__item.active .prices__item-toggler {
   background-image: url(../assets/icons/icon-open.svg);
@@ -987,9 +1081,19 @@ ul {
   -webkit-transition: all ease-in-out 0.15s;
   transition: all ease-in-out 0.15s;
 }
+@media (max-width: 768px) {
+  .prices__item-body {
+    padding: 0 8px;
+  }
+}
 .prices__item.active .prices__item-body {
   max-height: none;
   padding: 20px 39px 42px;
+}
+@media (max-width: 768px) {
+  .prices__item.active .prices__item-body {
+    padding: 20px 8px 42px;
+  }
 }
 .prices__item-cards {
   display: -webkit-box;
@@ -1001,6 +1105,12 @@ ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 40px 60px;
+  margin: 0 0 40px;
+}
+@media (max-width: 576px) {
+  .prices__item-cards {
+    gap: 30px 60px;
+  }
 }
 .prices__item-card {
   -webkit-box-flex: 0;
@@ -1019,6 +1129,44 @@ ul {
   border-radius: 25px;
   background-color: #ffffff;
 }
+@media (max-width: 992px) {
+  .prices__item-card {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc((100% - 60px) / 2);
+            flex: 0 1 calc((100% - 60px) / 2);
+  }
+}
+@media (max-width: 576px) {
+  .prices__item-card {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+  }
+}
+.prices__item-card_hot {
+  position: relative;
+}
+.prices__item-card_hot::before {
+  content: "";
+  position: absolute;
+  top: -28px;
+  left: -22px;
+  display: block;
+  width: 60px;
+  height: 53px;
+  background-image: url(../assets/leaves.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-transform: rotate(-120deg);
+      -ms-transform: rotate(-120deg);
+          transform: rotate(-120deg);
+}
+@media (max-width: 768px) {
+  .prices__item-card_hot::before {
+    left: 0px;
+  }
+}
 .prices__item-card-title {
   margin: 0 0 24px;
   color: #89a767;
@@ -1029,6 +1177,11 @@ ul {
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .prices__item-card-title {
+    font-size: 18px;
+  }
 }
 .prices__item-card-time {
   margin: 0 0 18px;
@@ -1041,6 +1194,11 @@ ul {
   font-weight: 500;
   line-height: normal;
 }
+@media (max-width: 768px) {
+  .prices__item-card-time {
+    font-size: 18px;
+  }
+}
 .prices__item-card-subtitle {
   margin: 0 0 20px;
   color: #89a767;
@@ -1049,6 +1207,11 @@ ul {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+@media (max-width: 768px) {
+  .prices__item-card-subtitle {
+    font-size: 18px;
+  }
 }
 .prices__item-card-services {
   -webkit-box-flex: 1;
@@ -1068,6 +1231,11 @@ ul {
   list-style-type: none;
   background: url(../assets/icons/check.svg) no-repeat left center;
   background-size: 13px;
+}
+@media (max-width: 768px) {
+  .prices__item-card-services > li {
+    font-size: 14px;
+  }
 }
 .prices__item-card-price {
   margin: 0 0 21px;
@@ -1093,6 +1261,19 @@ ul {
   font-weight: 500;
   line-height: normal;
 }
+.prices__item-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .prices__item-text {
+    font-size: 14px;
+  }
+}
+
 .footer .container {
   display: -webkit-box;
   display: -ms-flexbox;
