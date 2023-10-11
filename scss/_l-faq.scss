@@ -1,7 +1,86 @@
 .faq {
-  padding: 119px 0 97px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 56px;
+    right: 106px;
+    z-index: 1;
+    width: 403px;
+    height: 650px;
+    background-image: url(../assets/leaves-big.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 403px 650px;
+
+    @include tablet {
+      top: 42px;
+      right: 25px;
+      width: 161px;
+      height: 259px;
+      background-size: 161px 259px;
+    }
+
+    @include mobile {
+      top: 62px;
+      right: 7px;
+      width: 84px;
+      height: 135px;
+      background-size: 84px 135px;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 283px;
+    left: 145px;
+    z-index: 1;
+    width: 201px;
+    height: 299px;
+    background-image: url(../assets/leaf-middle.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 201px 299px;
+
+    @include tablet {
+      bottom: 158px;
+      left: 4px;
+      width: 115px;
+      height: 171px;
+      background-size: 115px 171px;
+    }
+
+    @include mobile {
+      top: 399px;
+      left: 15px;
+      width: 40px;
+      height: 59px;
+      background-size: 40px 59px;
+    }
+  }
+
+  .container {
+    padding-top: 119px;
+    padding-bottom: 24px;
+
+    @include tablet {
+      padding-top: 65px;
+      padding-bottom: 10px;
+    }
+
+    @include mobile {
+      padding-top: 40px;
+      padding-bottom: 15px;
+    }
+  }
 
   &__title {
+    position: relative;
+    z-index: 5;
     margin: 0 auto 98px;
     font-size: 40px;
     font-style: normal;
@@ -18,10 +97,41 @@
       font-weight: 700;
       font-size: 20px;
     }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 6;
+      width: 168px;
+      height: 168px;
+      background-image: url(../assets/panda-laugh.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 168px;
+
+      @include tablet {
+        top: -10px;
+        right: -16px;
+        width: 130px;
+        height: 130px;
+        background-size: 130px;
+      }
+
+      @include mobile {
+        top: 30px;
+        right: 5px;
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+      }
+    }
   }
 
   &__item {
     position: relative;
+    z-index: 4;
     max-width: 1140px;
     margin: 0 auto 30px;
     border-radius: 25px;
@@ -165,6 +275,17 @@
       @include mobile {
         padding-left: 25px;
         padding-right: 20px;
+      }
+
+      & > p,
+      & > ol {
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
     }
 

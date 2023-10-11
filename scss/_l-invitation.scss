@@ -1,6 +1,7 @@
 .invitation {
   position: relative;
   padding: 144px 0 112px;
+  overflow: hidden;
   background-image: url(../assets/bg/invitation-bg.png);
   background-position: center center;
   background-repeat: no-repeat;
@@ -15,6 +16,72 @@
     padding: 70px 0;
     background-position: left -300px center;
     background-size: 1200px 100%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 64px;
+    right: 77px;
+    z-index: 1;
+    width: 399px;
+    height: 430px;
+    background-image: url(../assets/mountain.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 399px 430px;
+
+    @include laptop {
+      top: 154px;
+      right: 10px;
+      width: 147px;
+      height: 158px;
+      background-size: 147px 158px;
+    }
+
+    @include mobile {
+      top: 117px;
+      right: -39px;
+      width: 96px;
+      height: 103px;
+      background-size: 96px 103px;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: 133px;
+    left: 344px;
+    z-index: 1;
+    width: 100px;
+    height: 161px;
+    background-image: url(../assets/leaves-grey.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100px 161px;
+
+    @include desktop {
+      bottom: 207px;
+      left: 16px;
+      width: 66px;
+      height: 105px;
+      background-size: 66px 105px;
+    }
+
+    @include mobile {
+      top: 166px;
+      left: 13px;
+      width: 38px;
+      height: 62px;
+      background-size: 38px 62px;
+    }
+  }
+
+  & .container   {
+    position: relative;
+    z-index: 5;
   }
 
   &__title {
