@@ -1,3 +1,185 @@
 .faq {
-  display: none;
+  padding: 119px 0 97px;
+
+  &__title {
+    margin: 0 auto 98px;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+
+    @include tablet {
+      margin: 0 auto 55px;
+      font-size: 32px;
+    }
+
+    @include mobile {
+      font-weight: 700;
+      font-size: 20px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto 30px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    background: $white;
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
+    transition: $baseTransition;
+
+    @include tablet {
+      margin: 0 auto 20px;
+    }
+
+    @include mobile {
+      margin: 0 auto 12px;
+    }
+
+    &:last-child {
+      margin: 0 auto;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 25px;
+      height: 100%;
+      border-radius: 25px 0 0 25px;
+      background-color: $green;
+      transition: $baseTransition;
+
+      @include tablet {
+        width: 22px;
+      }
+
+      @include mobile {
+        width: 18px;
+      }
+    }
+
+    &.active {
+      &::before {
+        opacity: 0;
+      }
+    }
+
+    &-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 120px;
+      padding: 0 120px 0 58px;
+
+      @include tablet {
+        height: 90px;
+        padding: 0 100px 0 30px;
+      }
+
+      @include mobile {
+        padding: 0 64px 0 25px;
+      }
+    }
+
+    &-title {
+      margin: 0;
+      color: $black;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-transform: uppercase;
+      transition: $baseTransition;
+
+      @include tablet {
+        font-size: 20px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    &.active &-title {
+      color: $green;
+    }
+
+    &-toggler {
+      position: absolute;
+      top: 35px;
+      right: 47px;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: none;
+      border-radius: 50px;
+      background-image: url(../assets/icons/icon-close-green.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transition: background ease-in-out 0.3s;
+      cursor: pointer;
+
+      @include tablet {
+        top: 26px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+
+      @include mobile {
+        top: 30px;
+        right: 16px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &.active &-toggler {
+      background-image: url(../assets/icons/icon-open.svg);
+    }
+
+    &-body {
+      max-height: 0px;
+      padding-left: 58px;
+      padding-right: 163px;
+      box-sizing: content-box;
+      overflow: hidden;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      transition: $baseTransition;
+
+      @include tablet {
+        padding-left: 30px;
+        padding-right: 90px;
+        font-size: 14px;
+      }
+
+      @include mobile {
+        padding-left: 25px;
+        padding-right: 20px;
+      }
+    }
+
+    &.active &-body {
+      max-height: none;
+      padding-top: 8px;
+      padding-bottom: 64px;
+
+      @include tablet {
+        padding-bottom: 30px;
+      }
+
+      @include mobile {
+        padding-bottom: 28px;
+      }
+    }
+  }
 }

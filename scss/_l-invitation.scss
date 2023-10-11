@@ -43,7 +43,7 @@
   &__description {
     margin: 0 auto 34px;
     color: $white;
-    font-size: 20px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -51,10 +51,11 @@
 
     @include tablet {
       max-width: 513px;
+      font-size: 18px;
     }
 
     @include mobile {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 
