@@ -1,99 +1,240 @@
 .footer {
+  padding: 24px 0 45px;
+  color: $white;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  background-color: $black;
+
+  @include tablet {
+    padding: 30px 0 31px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @include mobile {
+    padding: 32px 0 24px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
   & .container {
+    position: relative;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 46px;
-    padding: 20px 16px;
-    border-top: 1px solid #eaecee;
+    gap: 127px;
 
     @include desktop {
-      justify-content: center;
-      gap: 16px;
+      gap: 80px;
+    }
+
+    @include laptop {
+      gap: 50px;
+      padding-bottom: 70px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 18px;
+      padding-bottom: 40px;
+    }
+  }
+
+  & a {
+    color: $white;
+  }
+
+  &__sidebar {
+    flex: 0 0 auto;
+
+    @include mobile {
+      order: 1;
+    }
+  }
+
+  &__logo {
+    margin: 0 0 28px;
+
+    & img {
+      width: 100px;
+      height: auto;
     }
   }
 
   &__copyrights {
-    flex: 1 0 auto;
     display: flex;
-    align-items: center;
-    gap: 57px;
-    color: #475569;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 19px;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
 
-    & a {
-      color: #475569;
-      font-size: 13px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 19px;
-
-      &:hover {
-        color: #6183e4;
-      }
+    & li {
+      list-style-type: none;
     }
+  }
+
+  &__main {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 132px;
+    padding-top: 16px;
 
     @include desktop {
-      flex: 1 0 100%;
-      flex-wrap: wrap;
-      justify-content: center;
-      order: 1;
+      gap: 80px;
+    }
+
+    @include laptop {
+      gap: 50px;
     }
 
     @include tablet {
-      gap: 16px;
+      gap: 30px;
+    }
+
+    @include mobile {
+      order: 0;
     }
   }
 
-  &__payments {
+  &__nav {
+    flex: 0 1 277px;
     display: flex;
-    align-items: center;
-    gap: 5px;
-
-    &-method {
-      height: 24px;
-      width: 34px;
-      border: 1px solid #eaecee;
-      border-radius: 5px;
-      background-repeat: no-repeat;
-      background-position: center;
-
-      &_google {
-        background-image: url(../assets/payment-methods/GooglePay.svg);
-      }
-
-      &_apple {
-        background-image: url(../assets/payment-methods/ApplePay.svg);
-      }
-
-      &_visa {
-        background-image: url(../assets/payment-methods/visa-logo.svg);
-      }
-
-      &_mastercard {
-        background-image: url(../assets/payment-methods/Mastercard.svg);
-      }
-
-      &_maestro {
-        background-image: url(../assets/payment-methods/Maestro.svg);
-      }
-
-      &_webmoney {
-        background-image: url(../assets/payment-methods/Webmoney.svg);
-      }
-
-      &_qiwi {
-        background-image: url(../assets/payment-methods/Qiwi.svg);
-      }
-    }
-  }
-
-  &__buttons {
-    display: flex;
-    align-items: center;
+    justify-content: space-between;
     gap: 12px;
+
+    @include desktop {
+      flex: 0 1 220px;
+    }
+
+    @include laptop {
+      flex: 1 1 auto;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @include mobile {
+      position: absolute;
+      top: calc(100% + 37px);
+      right: 0;
+      flex-direction: row;
+      gap: 24px;
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @include mobile {
+        gap: 14px;
+      }
+    }
+  }
+
+  &__contacts {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 48px;
+
+    @include laptop {
+      flex-direction: column;
+      gap: 12px;
+      padding-right: 0;
+    }
+
+    @include mobile {
+      flex-direction: row;
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &-link {
+      display: inline-block;
+      padding-left: 28px;
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 20px;
+
+      @include mobile {
+        background-size: 18px;
+      }
+
+      &_phone {
+        background-image: url(../assets/icons/call-calling-grey.svg);
+      }
+
+      &_telegram {
+        background-image: url(../assets/icons/telegram-grey.svg);
+      }
+
+      &_whatsapp {
+        background-image: url(../assets/icons/whatsapp-grey.svg);
+      }
+    }
+
+    &-address {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-left: 28px;
+      margin: 0;
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: 20px;
+      background-image: url(../assets/icons/location-grey.svg);
+
+      @include mobile {
+        background-size: 18px;
+      }
+
+      & > li {
+        list-style-type: none;
+      }
+    }
+  }
+
+  &__agreements {
+    position: absolute;
+    bottom: 0;
+    left: 326px;
+    display: flex;
+    gap: 170px;
+
+    @include desktop {
+      left: 279px;
+      gap: 60px;
+    }
+
+    @include laptop {
+      left: 16px;
+      right: 16px;
+    }
+
+    @include tablet {
+      left: 16px;
+      right: 16px;
+      gap: 37px;
+    }
+
+    @include mobile {
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    &-link {
+      text-align: center;
+
+      @include mobile {
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
   }
 }
