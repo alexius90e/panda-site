@@ -150,6 +150,10 @@
       line-height: normal;
       background-color: $pink;
 
+      &:hover {
+        background-color: #c28a84;
+      }
+
       @include mobile {
         max-height: 56px;
       }

@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+  z-index: 100;
   padding: 21px 0 24px;
   background: $greyLight;
   box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.06);
@@ -14,11 +16,17 @@
     gap: 16px;
   }
 
+  & .logo {
+    position: relative;
+    z-index: 100;
+  }
+
   &__nav {
     display: flex;
     align-items: center;
     margin-left: -34px;
     gap: 40px;
+    transition: $baseTransition;
 
     @include desktop {
       margin-left: 0;
@@ -26,7 +34,17 @@
     }
 
     @include laptop {
-      display: none;
+      position: absolute;
+      z-index: 90;
+      top: -1000px;
+      left: 0;
+      right: 0;
+      padding: 22px 16px 58px;
+      flex-direction: column;
+      background-color: $greyLight;
+      border-radius: 0px 0px 25px 25px;
+      box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.1);
+      transition: $baseTransition;
     }
 
     &-link {
@@ -38,6 +56,21 @@
         flex: 1 1 auto;
       }
 
+      @include laptop {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        color: $green;
+        opacity: 0;
+        transition: opacity ease-in-out 0.1s;
+        transition-delay: 0.15s;
+      }
+
+      @include mobile {
+        font-size: 20px;
+      }
+
       &:hover {
         color: $pink;
       }
@@ -46,9 +79,74 @@
         color: $pink;
       }
     }
+
+    &-contacts {
+      display: none;
+
+      @include laptop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin: 60px 0 0;
+      }
+
+      @include tablet {
+        gap: 10px 20px;
+      }
+
+      @include mobile {
+        margin: 45px 0 0;
+      }
+
+      &-link {
+        padding-left: 28px;
+        color: $green;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 18px;
+
+        @include mobile {
+          font-size: 12px;
+          line-height: 15px;
+          background-size: 15px;
+        }
+
+        &_phone {
+          background-image: url(../assets/icons/call-calling-grey.svg);
+        }
+
+        &_telegram {
+          background-image: url(../assets/icons/telegram-grey.svg);
+        }
+
+        &_whatsapp {
+          background-image: url(../assets/icons/whatsapp-grey.svg);
+        }
+      }
+    }
+  }
+
+  &.active &__nav {
+    @include laptop {
+      top: 100%;
+    }
+  }
+
+  &.active &__nav-link {
+    @include laptop {
+      opacity: 1;
+      transition-delay: 0;
+    }
   }
 
   &__callback {
+    position: relative;
+    z-index: 100;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -86,6 +184,8 @@
   }
 
   &__burger-btn {
+    position: relative;
+    z-index: 100;
     flex: 0 0 auto;
     display: none;
     width: 43px;
@@ -98,8 +198,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 17px;
+    transition: $baseTransition;
 
-    @include tablet {
+    @include laptop {
       display: inline-block;
     }
 
@@ -110,5 +211,9 @@
     &:active {
       background-color: #72934c;
     }
+  }
+
+  &.active &__burger-btn {
+    background-image: url(../assets/icons/x.svg);
   }
 }
