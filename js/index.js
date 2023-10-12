@@ -38,3 +38,24 @@ faqItems.forEach((item) =>
     if (isToggler && !isActive) faqItem.classList.add('active');
   })
 );
+
+const reviewSlider = new Swiper('.reviews__swiper', {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 10,
+  setWrapperSize: true,
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 0,
+    },
+    993: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+  },
+  navigation: {
+    nextEl: '.reviews__slider-btn_next',
+    prevEl: '.reviews__slider-btn_prev',
+  },
+});
