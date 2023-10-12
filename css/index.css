@@ -2777,3 +2777,62 @@ ul {
     line-height: 12px;
   }
 }
+
+.document {
+  max-width: 1216px;
+  margin: 0 auto;
+  padding: 60px 20px 90px;
+  color: #4e4e4e;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@media (max-width: 768px) {
+  .document {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .document {
+    font-size: 12px;
+  }
+}
+.document h2 {
+  color: #4e4e4e;
+  margin: 0 0 50px;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 768px) {
+  .document h2 {
+    margin: 0 0 40px;
+    font-size: 32px;
+  }
+}
+@media (max-width: 576px) {
+  .document h2 {
+    margin: 0 0 30px;
+    font-size: 20px;
+  }
+}
+.document p span {
+  color: #89a767;
+}
+.document h5 {
+  color: #89a767;
+}
+.document ul {
+  padding-left: 8px;
+  list-style: none;
+}
+.document ul li::before {
+  content: "-";
+  padding-right: 8px;
+  color: #4e4e4e;
+}
+.document a {
+  color: #89a767;
+}
