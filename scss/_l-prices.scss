@@ -1,5 +1,13 @@
 .prices {
-  padding: 75px 0;
+  padding: 75px 0 40px;
+
+  @include tablet {
+    padding: 65px 0 27px;
+  }
+
+  @include mobile {
+    padding: 40px 0 10px;
+  }
 
   &__title {
     position: relative;
@@ -17,6 +25,7 @@
     @include mobile {
       margin: 0 0 25px;
       font-size: 20px;
+      font-weight: 700;
     }
 
     &::before {
