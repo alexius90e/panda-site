@@ -2870,6 +2870,10 @@ ul {
           box-sizing: border-box;
   border-radius: 20px;
   background-color: #ffffff;
+  background-image: url(../assets/bamboo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 @media (max-width: 768px) {
   .modal__content {
@@ -2939,6 +2943,9 @@ ul {
   .modal__description {
     margin: 0 0 48px;
   }
+}
+.modal#successModal .modal__description {
+  margin: 0;
 }
 .modal .contacts__form-inputs {
   display: -webkit-box;

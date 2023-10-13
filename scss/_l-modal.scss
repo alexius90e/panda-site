@@ -25,6 +25,10 @@
     box-sizing: border-box;
     border-radius: 20px;
     background-color: $white;
+    background-image: url(../assets/bamboo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 
     @include tablet {
       padding: 54px 25px 38px;
@@ -93,6 +97,10 @@
     @include mobile {
       margin: 0 0 48px;
     }
+  }
+  
+  &#successModal &__description {
+    margin: 0;
   }
 
   & .contacts {

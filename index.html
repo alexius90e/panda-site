@@ -69,13 +69,15 @@
 
           <p class="first-screen__description_form">Оставьте телефон и мы перезвоним</p>
 
-          <form class="contact-form">
+          <form class="contact-form callback-form">
             <fieldset class="contact-form__main">
               <input
                 class="contact-form__phone"
                 type="text"
                 placeholder="+ 995  _  _  _   _  _  _   _  _  _"
-                name="phone"
+                pattern="\+995 [0-9]{3} [0-9]{3} [0-9]{3}"
+                title="Phone should  match pattern +995 123 456 789"
+                name="userPhone"
                 autocomplete="off"
                 required
               />
@@ -191,13 +193,15 @@
             Мы покажем наши центры, ответим на все вопросы, проведём мини-презентацию
           </p>
 
-          <form class="contact-form">
+          <form class="contact-form callback-form">
             <fieldset class="contact-form__main">
               <input
                 class="contact-form__phone"
                 type="text"
                 placeholder="+ 995  _  _  _   _  _  _   _  _  _"
-                name="phone"
+                pattern="\+995 [0-9]{3} [0-9]{3} [0-9]{3}"
+                title="Phone should  match pattern +995 123 456 789"
+                name="userPhone"
                 autocomplete="off"
                 required
               />
@@ -543,13 +547,15 @@
             Мы покажем наши центры, ответим на все вопросы, проведём мини-презентацию
           </p>
 
-          <form class="contact-form">
+          <form class="contact-form callback-form">
             <fieldset class="contact-form__main">
               <input
                 class="contact-form__phone"
                 type="tel"
                 placeholder="+ 995  _  _  _   _  _  _   _  _  _"
-                name="phone"
+                pattern="\+995 [0-9]{3} [0-9]{3} [0-9]{3}"
+                title="Phone should  match pattern +995 123 456 789"
+                name="userPhone"
                 autocomplete="off"
                 required
               />
@@ -824,7 +830,7 @@
           <h2 class="contacts__title">Остались вопросы?</h2>
 
           <div class="contacts__content">
-            <form class="contacts__form">
+            <form class="contacts__form callback-form">
               <p class="contacts__description">Просто напишите нам, и мы на них ответим</p>
 
               <fieldset class="contacts__form-inputs">
@@ -833,6 +839,7 @@
                   class="contacts__form-input contacts__form-input_name"
                   type="text"
                   id="contactsName"
+                  name="userName"
                   placeholder="Имя"
                   required
                 />
@@ -844,7 +851,10 @@
                   class="contacts__form-input contacts__form-input_phone"
                   type="text"
                   id="contactsPhone"
+                  name="userPhone"
                   placeholder="+995 _ _ _  _ _ _  _ _ _"
+                  pattern="\+995 [0-9]{3} [0-9]{3} [0-9]{3}"
+                  title="Phone should  match pattern +995 123 456 789"
                   required
                 />
 
@@ -852,6 +862,7 @@
                 <textarea
                   class="contacts__form-textarea"
                   id="contactsMessage"
+                  name="userMessage"
                   cols="30"
                   rows="11"
                   required
@@ -966,7 +977,7 @@
           <p class="modal__description">
             Оставьте свой номер и мы свяжемся с Вами в ближайшее время
           </p>
-          <form class="contacts__form">
+          <form class="contacts__form callback-form">
             <fieldset class="contacts__form-inputs">
               <div>
                 <label class="contacts__form-label" for="contactsNameModal"
@@ -976,7 +987,7 @@
                   class="contacts__form-input contacts__form-input_name"
                   type="text"
                   id="contactsNameModal"
-                  name="name"
+                  name="userName"
                   placeholder="Имя"
                   autocomplete="off"
                   required
@@ -991,8 +1002,10 @@
                   class="contacts__form-input contacts__form-input_phone"
                   type="text"
                   id="contactsPhoneModal"
-                  name="phone"
+                  name="userPhone"
                   placeholder="+995 _ _ _  _ _ _  _ _ _"
+                  pattern="\+995 [0-9]{3} [0-9]{3} [0-9]{3}"
+                  title="Phone should  match pattern +995 123 456 789"
                   autocomplete="off"
                   required
                 />

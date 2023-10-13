@@ -252,7 +252,7 @@
           <p class="modal__description">
             Оставьте свой номер и мы свяжемся с Вами в ближайшее время
           </p>
-          <form class="contacts__form">
+          <form class="contacts__form callback-form">
             <fieldset class="contacts__form-inputs">
               <div>
                 <label class="contacts__form-label" for="contactsNameModal"
@@ -262,7 +262,7 @@
                   class="contacts__form-input contacts__form-input_name"
                   type="text"
                   id="contactsNameModal"
-                  name="name"
+                  name="userName"
                   placeholder="Имя"
                   autocomplete="off"
                   required
@@ -277,8 +277,10 @@
                   class="contacts__form-input contacts__form-input_phone"
                   type="text"
                   id="contactsPhoneModal"
-                  name="phone"
+                  name="userPhone"
                   placeholder="+995 _ _ _  _ _ _  _ _ _"
+                  pattern="\+995 [0-9]{3} [0-9]{3} [0-9]{3}"
+                  title="Phone should  match pattern +995 123 456 789"
                   autocomplete="off"
                   required
                 />
