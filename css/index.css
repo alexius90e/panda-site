@@ -2836,3 +2836,130 @@ ul {
 .document a {
   color: #89a767;
 }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  display: none;
+  padding: 25px;
+  background-color: rgba(78, 78, 78, 0.25);
+}
+.modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.modal__content {
+  position: relative;
+  max-height: 90vh;
+  max-width: 900px;
+  width: 100%;
+  padding: 90px 25px 120px;
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+@media (max-width: 768px) {
+  .modal__content {
+    padding: 54px 25px 38px;
+  }
+}
+@media (max-width: 576px) {
+  .modal__content {
+    padding: 50px 25px 45px;
+  }
+}
+.modal__body {
+  max-width: 568px;
+  margin: 0 auto;
+}
+.modal__button-close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  border: none;
+  background-color: #ffffff;
+  background-image: url(../assets/icons/x-green.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  cursor: pointer;
+}
+.modal__title {
+  margin: 0 0 11px;
+  color: #4e4e4e;
+  font-family: "BoB", sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .modal__title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 576px) {
+  .modal__title {
+    font-size: 16px;
+  }
+}
+.modal__description {
+  margin: 0 0 85px;
+  color: #4e4e4e;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .modal__description {
+    margin: 0 0 37px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .modal__description {
+    margin: 0 0 48px;
+  }
+}
+.modal .contacts__form-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+@media (max-width: 768px) {
+  .modal .contacts__form-inputs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.modal .contacts__form-submit {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}

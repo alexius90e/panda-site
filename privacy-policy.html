@@ -49,7 +49,7 @@
 
         <div class="header__callback">
           <a class="header__callback-phone" href="tel:+995591088857">+995 591 088 857</a>
-          <button class="button">Связаться с нами</button>
+          <button class="button" id="contactUs">Связаться с нами</button>
         </div>
 
         <button class="header__burger-btn"></button>
@@ -244,5 +244,87 @@
         </div>
       </div>
     </footer>
+
+    <div class="modal" id="contactModal">
+      <div class="modal__content">
+        <div class="modal__body">
+          <h2 class="modal__title">Записаться на экскурсию</h2>
+          <p class="modal__description">
+            Оставьте свой номер и мы свяжемся с Вами в ближайшее время
+          </p>
+          <form class="contacts__form">
+            <fieldset class="contacts__form-inputs">
+              <div>
+                <label class="contacts__form-label" for="contactsNameModal"
+                  >Как к Вам обратиться?</label
+                >
+                <input
+                  class="contacts__form-input contacts__form-input_name"
+                  type="text"
+                  id="contactsNameModal"
+                  name="name"
+                  placeholder="Имя"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="contacts__form-label" for="contactsPhoneModal"
+                  >Номер мобильного телефона</label
+                >
+                <input
+                  class="contacts__form-input contacts__form-input_phone"
+                  type="text"
+                  id="contactsPhoneModal"
+                  name="phone"
+                  placeholder="+995 _ _ _  _ _ _  _ _ _"
+                  autocomplete="off"
+                  required
+                />
+              </div>
+            </fieldset>
+
+            <fieldset class="contacts__form-submit">
+              <input class="button" type="submit" value="Задать вопрос" />
+            </fieldset>
+
+            <fieldset class="contact-form__agreement">
+              <label class="contact-form__agreement-label">
+                <input
+                  class="contact-form__agreement-input"
+                  type="checkbox"
+                  id="agreementModal"
+                  value="true"
+                  checked
+                  required
+                />
+                <span class="contact-form__agreement-text">
+                  Нажимая на кнопку, вы даете согласие на обработку
+                  <a href="./">персональных данных</a> и соглашаетесь c
+                  <a href="./">политикой конфиденциальности</a>.
+                </span>
+                <span class="contact-form__agreement-checkmark"></span>
+              </label>
+            </fieldset>
+          </form>
+        </div>
+
+        <button class="modal__button-close"></button>
+      </div>
+    </div>
+
+    <div class="modal" id="successModal">
+      <div class="modal__content">
+        <div class="modal__body">
+          <h2 class="modal__title">Спасибо</h2>
+          <p class="modal__description">
+            мы получили вашу заявку, и позвоним вам в ближайшее время
+          </p>
+        </div>
+
+        <button class="modal__button-close"></button>
+      </div>
+    </div>
   </body>
 </html>
