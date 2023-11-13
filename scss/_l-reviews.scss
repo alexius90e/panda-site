@@ -176,7 +176,7 @@
 
       @include mobile {
         gap: 18px;
-        padding-left: 24px;
+        padding-left: 12px;
       }
     }
 
@@ -209,6 +209,20 @@
 
       @include tablet {
         font-size: 18px;
+      }
+
+      &_ge {
+        font-family: 'FiraGO', 'Arial', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+
+        @include laptop {
+          font-size: 22px;
+        }
+  
+        @include mobile {
+          font-size: 20px;
+        }
       }
     }
 

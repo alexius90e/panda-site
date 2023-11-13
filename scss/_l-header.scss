@@ -22,10 +22,11 @@
   }
 
   &__nav {
+    flex: 1 1 auto;
     display: flex;
     align-items: center;
-    margin-left: -34px;
-    gap: 40px;
+    justify-content: space-between;
+    gap: 12px;
     transition: $baseTransition;
 
     @include desktop {
@@ -180,6 +181,47 @@
       font-size: 16px;
       line-height: 16px;
       font-weight: 500;
+    }
+  }
+
+  &__language {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include mobile {
+      flex: 1 0 auto;
+      justify-content: flex-end;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      color: $greyBlueStrong;
+      text-align: center;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      border: 2px solid $white;
+      border-radius: 48px;
+      transition: $baseTransition;
+      will-change: backgroundColor, color;
+
+      @include laptop {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: $white;
+        background-color: $greyBlueStrong;
+      }
     }
   }
 
