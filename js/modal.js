@@ -1,6 +1,6 @@
 const modals = document.querySelectorAll('.modal');
 const contactModalForm = document.querySelector('#contactModal .contacts__form');
-const contactUsButton = document.getElementById('contactUs');
+const contactUsButtons = document.querySelectorAll('.contact-us-button');
 const contactModal = document.getElementById('contactModal');
 
 modals.forEach((modal) => {
@@ -17,7 +17,7 @@ contactModalForm.addEventListener('submit', (event) => {
   hideContactModal();
 });
 
-contactUsButton.addEventListener('click', showContactModal);
+contactUsButtons.forEach((button) => button.addEventListener('click', showContactModal));
 
 function showContactModal() {
   contactModal.classList.add('active');
