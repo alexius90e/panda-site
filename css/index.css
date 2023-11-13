@@ -26,6 +26,18 @@ body {
     overflow: hidden;
   }
 }
+body *::-moz-selection {
+  background: #89a767;
+  color: #ffffff;
+}
+body *::-webkit-selection {
+  background: #89a767;
+  color: #ffffff;
+}
+body *::selection {
+  background: #89a767;
+  color: #ffffff;
+}
 
 a,
 button,

@@ -2,7 +2,8 @@
 
 @font-face {
   font-family: 'Bob';
-  src: url('../fonts/bob-webfont.woff2') format('woff2'), url('../fonts/bob-webfont.woff') format('woff');
+  src: url('../fonts/bob-webfont.woff2') format('woff2'),
+    url('../fonts/bob-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,6 +28,21 @@ body {
       max-height: 100vh;
       overflow: hidden;
     }
+  }
+
+  & *::-moz-selection {
+    background: $green;
+    color: $white;
+  }
+  
+  & *::-webkit-selection {
+    background: $green;
+    color: $white;
+  }
+  
+  & *::selection {
+    background: $green;
+    color: $white;
   }
 }
 
